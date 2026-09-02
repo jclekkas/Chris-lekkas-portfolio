@@ -1,9 +1,13 @@
 import type { MetadataRoute } from 'next'
-import { SITE_URL } from '@/content/site'
+import { IS_PREVIEW, SITE_URL } from '@/content/site'
 
 export const dynamic = 'force-static'
 
 export default function robots(): MetadataRoute.Robots {
+  if (IS_PREVIEW) {
+    return { rules: [{ userAgent: '*', disallow: '/' }] }
+  }
+
   return {
     rules: [{ userAgent: '*', allow: '/', disallow: ['/api/'] }],
     sitemap: `${SITE_URL}/sitemap.xml`,

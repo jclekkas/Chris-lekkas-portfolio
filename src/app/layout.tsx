@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Instrument_Serif } from 'next/font/google'
-import { SITE_URL } from '@/content/site'
+import { IS_PREVIEW, SITE_URL } from '@/content/site'
 import './globals.css'
 
 const inter = Inter({
@@ -23,12 +23,16 @@ export const metadata: Metadata = {
     template: '%s — Chris Lekkas',
   },
   description:
-    'Chris Lekkas helps owner-led businesses work out what their website or workflow needs to accomplish, then takes it from strategy through design, build and launch — in English or Spanish.',
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
-  },
+    'Chris Lekkas helps owner-led businesses clarify what they need, then takes it from strategy through design, build and launch — from websites and booking experiences to focused digital tools. English and Spanish.',
+  // A preview deployment must never be indexed: it would compete with
+  // production for the same content under a different origin.
+  robots: IS_PREVIEW
+    ? { index: false, follow: false, nocache: true }
+    : {
+        index: true,
+        follow: true,
+        googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+      },
   authors: [{ name: 'Chris Lekkas', url: SITE_URL }],
   creator: 'Chris Lekkas',
 }

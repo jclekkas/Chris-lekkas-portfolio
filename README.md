@@ -63,7 +63,7 @@ Copy `.env.example` to `.env.local`. Nothing here is required to run or build.
 
 | Variable | Required | What it does |
 | --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | No (defaults to `https://chrislekkas.com`) | Origin for canonical URLs, hreflang, sitemap and social cards. **Set this on preview deployments** so they do not claim to be production. |
+| `NEXT_PUBLIC_SITE_URL` | No | Origin for canonical URLs, hreflang, sitemap and social cards. **A Vercel preview needs no variables at all**: when this is unset, a preview or development deployment uses its own `NEXT_PUBLIC_VERCEL_URL`, and is served `noindex` so it cannot compete with production. Falls back to `https://chrislekkas.com`. |
 | `RESEND_API_KEY` | No | Server build only. Without it the contact route still validates and accepts a submission, logs it, and reports `delivered: false` — so a misconfigured deploy fails loudly instead of swallowing enquiries. |
 | `CONTACT_TO_EMAIL` | No (defaults to `jclekkas@gmail.com`) | Where enquiries go. |
 | `CONTACT_FROM_EMAIL` | No | Sender address for the delivery provider. |
@@ -188,9 +188,11 @@ Enlace Mental's screenshots — desktop, phone and four gallery frames — were 
 
 Do not deploy production without Chris's approval.
 
-**Preview on Vercel.** Import the repository, set `NEXT_PUBLIC_SITE_URL` to the preview
-origin, and let it run `npm run build`. The contact route works; add `RESEND_API_KEY` if
-you want enquiries actually emailed rather than logged.
+**Preview on Vercel.** Import the repository, pick the branch, keep the detected Next.js
+settings and deploy. **No environment variables are required**: the build detects a
+preview deployment and uses its own URL for canonicals, hreflang and the sitemap, and
+serves the whole preview `noindex`. The contact route works; add `RESEND_API_KEY` if you
+want enquiries actually emailed rather than logged.
 
 **Preview as a static folder.**
 

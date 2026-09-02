@@ -1,13 +1,34 @@
 import type { Language } from './schema'
 
 /**
- * Canonical origin. Override in the deployment environment so preview builds
- * emit their own absolute URLs instead of claiming to be production.
+ * Where this build thinks it lives.
+ *
+ * Resolution order:
+ *   1. NEXT_PUBLIC_SITE_URL, if someone set it explicitly.
+ *   2. On a Vercel preview or development deployment, that deployment's own
+ *      URL — so a preview's canonicals, hreflang, sitemap and social cards
+ *      describe the preview instead of claiming to be production. This is why
+ *      a first preview needs no environment variables at all.
+ *   3. Production.
+ *
+ * Only NEXT_PUBLIC_* variables are read here, because this module reaches the
+ * client bundle: a server-only variable would resolve differently in the two
+ * places and cause a hydration mismatch.
  */
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://chrislekkas.com').replace(
-  /\/$/,
-  '',
-)
+const VERCEL_ENV = process.env.NEXT_PUBLIC_VERCEL_ENV
+const VERCEL_URL = process.env.NEXT_PUBLIC_VERCEL_URL
+
+/** True on any Vercel deployment that is not production. */
+export const IS_PREVIEW = VERCEL_ENV === 'preview' || VERCEL_ENV === 'development'
+
+function resolveSiteUrl(): string {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL
+  if (explicit) return explicit.replace(/\/$/, '')
+  if (IS_PREVIEW && VERCEL_URL) return `https://${VERCEL_URL}`
+  return 'https://chrislekkas.com'
+}
+
+export const SITE_URL = resolveSiteUrl()
 
 export const CONTACT_EMAIL = 'jclekkas@gmail.com'
 
