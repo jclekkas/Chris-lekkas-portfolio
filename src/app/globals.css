@@ -55,6 +55,16 @@
     color: var(--color-ink);
   }
 
+  /*
+    Grid tracks default to `minmax(auto, 1fr)`, so a long unbreakable word can
+    push a column wider than its track and the whole page sideways. That is what
+    happens to the hero at 200% text zoom. Zero specificity, so any explicit
+    min-width utility still wins.
+  */
+  :where(.grid) > * {
+    min-width: 0;
+  }
+
   /* Headings set in the display serif; sizes come from the utilities. */
   h1,
   h2,

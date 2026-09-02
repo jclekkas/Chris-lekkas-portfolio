@@ -49,13 +49,13 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       />
 
       <Container className="pt-14 sm:pt-20">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-7">
+        <div className="grid gap-12 lg:grid-cols-[3fr_2fr] lg:gap-14">
+          <div>
             <Eyebrow>{copy.about.eyebrow}</Eyebrow>
             <h1 className="mt-4 text-[2.5rem] leading-[1.05] sm:text-6xl">{copy.about.title}</h1>
             <p className="mt-7 text-xl leading-relaxed text-ink">{copy.about.lead}</p>
           </div>
-          <div className="lg:col-span-5">
+          <div>
             {/* 400×400 is the only portrait available today. It is displayed at
                 a size it can actually carry; a higher-resolution original is on
                 the missing-assets list in README.md. */}

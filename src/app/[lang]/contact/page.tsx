@@ -48,8 +48,8 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
       />
 
       <Container className="pt-14 pb-24 sm:pt-20">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5">
+        <div className="grid gap-12 lg:grid-cols-[2fr_3fr] lg:gap-16">
+          <div>
             <Eyebrow>{copy.contact.eyebrow}</Eyebrow>
             <h1 className="mt-4 text-[2.5rem] leading-[1.05] sm:text-5xl">{copy.contact.title}</h1>
             <p className="mt-6 text-lg leading-relaxed text-ink-soft">{copy.contact.lead}</p>
@@ -67,7 +67,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
             </div>
           </div>
 
-          <div className="lg:col-span-7">
+          <div>
             <ContactForm lang={lang} />
           </div>
         </div>

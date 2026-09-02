@@ -65,7 +65,7 @@ export default async function CaseStudyPage({
       />
 
       {/* 1 & 2 — Overview, status and relationship */}
-      <Container className="pt-10 sm:pt-14">
+      <Container className="pt-12 sm:pt-16">
         <p>
           <Link
             href={`/${lang}/work/`}
@@ -139,9 +139,9 @@ export default async function CaseStudyPage({
       </Container>
 
       {/* 3 — Business problem */}
-      <Container width="narrow" className="mt-16">
+      <Container className="mt-16">
         <h2 className="text-2xl sm:text-3xl">{copy.project.problem}</h2>
-        <div className="mt-6 flex flex-col gap-5">
+        <div className="mt-6 flex max-w-3xl flex-col gap-5">
           {project.businessProblem[lang].map((paragraph) => (
             <p key={paragraph.slice(0, 48)} className="text-lg leading-relaxed text-ink-soft">
               {paragraph}
@@ -173,9 +173,9 @@ export default async function CaseStudyPage({
 
       {/* 7 — What was built */}
       <section className="mt-20 border-y border-rule bg-surface/50 py-16">
-        <Container width="narrow">
+        <Container>
           <h2 className="text-2xl sm:text-3xl">{copy.project.built}</h2>
-          <ul className="mt-7 flex flex-col gap-4">
+          <ul className="mt-7 flex max-w-3xl flex-col gap-4">
             {project.deliverables[lang].map((item) => (
               <li
                 key={item.slice(0, 48)}
@@ -216,8 +216,8 @@ export default async function CaseStudyPage({
       ) : null}
 
       {/* 8 & 9 — Evidence and current state, always stated */}
-      <Container width="narrow" className="mt-20">
-        <div className="grid gap-10 sm:grid-cols-2">
+      <Container className="mt-20">
+        <div className="grid max-w-4xl gap-10 sm:grid-cols-2">
           <div>
             <h2 className="u-meta text-ink-muted">{copy.project.evidence}</h2>
             <p className="mt-4 text-[1.0625rem] leading-relaxed text-ink-soft">

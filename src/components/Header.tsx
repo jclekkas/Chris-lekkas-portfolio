@@ -75,7 +75,7 @@ export function Header({ lang }: { lang: Language }) {
               </ul>
             </nav>
 
-            <LanguageSwitch lang={lang} className="hidden sm:block" />
+            <LanguageSwitch lang={lang} />
 
             <Link
               href={`/${lang}/contact/`}
@@ -120,11 +120,10 @@ export function Header({ lang }: { lang: Language }) {
               ))}
             </ul>
           </nav>
-          <div className="mt-4 flex items-center justify-between gap-4">
-            <LanguageSwitch lang={lang} />
+          <div className="mt-4">
             <Link
               href={`/${lang}/contact/`}
-              className="rounded-full bg-ink px-4 py-2 text-sm text-paper"
+              className="inline-block rounded-full bg-ink px-4 py-2 text-sm text-paper"
             >
               {copy.nav.cta}
             </Link>

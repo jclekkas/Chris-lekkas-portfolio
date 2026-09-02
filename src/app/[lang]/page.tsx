@@ -39,14 +39,16 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const lang = raw as Language
   const copy = getCopy(lang)
   const lead = FEATURED_PROJECTS[0]
+  // The hero presents the lead project itself, so the list below starts after it.
+  const rest = FEATURED_PROJECTS.slice(1)
 
   return (
     <>
       {/* 1 — Hero */}
       <section className="pt-14 pb-4 sm:pt-20">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-14">
-            <div className="lg:col-span-6 lg:pt-6">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-14">
+            <div className="lg:pt-6">
               <Eyebrow>{copy.home.heroEyebrow}</Eyebrow>
               <h1 className="mt-5 text-[2.5rem] leading-[1.05] sm:text-6xl lg:text-[4.25rem]">
                 {copy.home.heroHeadline}
@@ -71,7 +73,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
 
             {lead?.images.desktop ? (
-              <div className="lg:col-span-6">
+              <div>
                 <div className="overflow-hidden rounded-lg bg-surface ring-1 ring-rule">
                   <Image
                     src={lead.images.desktop.src}
@@ -83,14 +85,25 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     className="h-auto w-full"
                   />
                 </div>
-                <p className="u-meta mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-ink-muted">
-                  <span className="normal-case tracking-normal">{lead.name}</span>
-                  <StatusTag status={lead.status} label={copy.status[lead.status].label} />
-                  <RelationshipTag
-                    relationship={lead.relationship}
-                    label={copy.relationship[lead.relationship].label}
-                  />
-                </p>
+                <div className="mt-4 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                  <p className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                    <span className="u-meta tabular-nums text-rule-strong">01</span>
+                    <span className="font-display text-lg text-ink">{lead.name}</span>
+                    <StatusTag status={lead.status} label={copy.status[lead.status].label} />
+                    <RelationshipTag
+                      relationship={lead.relationship}
+                      label={copy.relationship[lead.relationship].label}
+                    />
+                  </p>
+                  <Link
+                    href={`/${lang}/work/${lead.slug}/`}
+                    className="u-meta inline-flex items-center gap-2 text-accent-deep underline decoration-rule-strong underline-offset-4 hover:decoration-accent-deep"
+                  >
+                    {copy.work.viewProject}
+                    <span aria-hidden="true">→</span>
+                    <span className="sr-only"> — {lead.name}</span>
+                  </Link>
+                </div>
               </div>
             ) : null}
           </div>
@@ -119,8 +132,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         intro={copy.home.workBody}
       >
         <div className="flex flex-col">
-          {FEATURED_PROJECTS.map((project, index) => (
-            <ProjectCard key={project.slug} project={project} lang={lang} index={index + 1} />
+          {rest.map((project, index) => (
+            <ProjectCard key={project.slug} project={project} lang={lang} index={index + 2} />
           ))}
         </div>
         <p className="mt-10">
@@ -156,8 +169,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       {/* 5 — About and credibility */}
       <Section>
-        <div className="grid items-start gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-4">
+        <div className="grid items-start gap-10 lg:grid-cols-[1fr_2fr]">
+          <div>
             <Image
               src="/chris/portrait.webp"
               alt="Chris Lekkas"
@@ -167,7 +180,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               className="w-40 rounded-lg sm:w-52 lg:w-full"
             />
           </div>
-          <div className="lg:col-span-8">
+          <div>
             <Eyebrow>{copy.home.aboutEyebrow}</Eyebrow>
             <h2 className="mt-3 text-3xl leading-tight sm:text-4xl">{copy.home.aboutTitle}</h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
@@ -201,7 +214,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </Section>
 
       {/* 7 — Engagement guidance */}
-      <Section eyebrow={copy.home.pricingEyebrow} title={copy.home.pricingTitle} width="narrow">
+      <Section eyebrow={copy.home.pricingEyebrow} title={copy.home.pricingTitle}>
         <p className="max-w-2xl text-lg leading-relaxed text-ink-soft">{copy.home.pricingBody}</p>
         <p className="mt-7">
           <Link
