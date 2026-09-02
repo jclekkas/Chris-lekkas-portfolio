@@ -15,11 +15,11 @@ import { heartOfLuray } from './heart-of-luray'
  * rendering something wrong on a public page.
  */
 const RAW: readonly Project[] = [
-  heartOfLuray,
-  bweMaryland,
-  ginnysCleaning,
   enlaceMental,
+  heartOfLuray,
+  ginnysCleaning,
   esteroYMar,
+  bweMaryland,
   handyDanny,
 ]
 
@@ -56,6 +56,13 @@ export const CONCEPT_PROJECTS = PROJECTS.filter((p) => p.relationship === 'self-
 export const FEATURED_PROJECTS = PROJECTS.filter((p) => p.featured).sort(
   (a, b) => a.order - b.order,
 )
+
+/**
+ * Concepts the homepage has not already featured. A featured concept is still
+ * labelled as a concept wherever it appears — this list exists so the homepage
+ * does not print the same project twice.
+ */
+export const UNFEATURED_CONCEPT_PROJECTS = CONCEPT_PROJECTS.filter((p) => !p.featured)
 
 export function getProject(slug: string): Project | undefined {
   return PROJECTS.find((p) => p.slug === slug)

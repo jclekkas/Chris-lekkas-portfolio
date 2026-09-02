@@ -5,7 +5,7 @@ export const en: SiteCopy = {
     title: 'Chris Lekkas — Product strategist and digital builder',
     titleTemplate: '%s — Chris Lekkas',
     description:
-      'Chris Lekkas helps owner-led businesses work out what their website or workflow needs to accomplish, then takes it from strategy through design, build and launch — in English or Spanish.',
+      'Chris Lekkas helps owner-led businesses clarify what they need, then takes it from strategy through design, build and launch — from websites and booking experiences to focused digital tools. English and Spanish.',
     jobTitle: 'Product strategist and digital builder',
     serviceName: 'Chris Lekkas — product strategy, design and build for owner-led businesses',
   },
@@ -55,10 +55,10 @@ export const en: SiteCopy = {
   },
 
   home: {
-    heroEyebrow: 'Product strategy · Design · Build',
-    heroHeadline: 'I turn business problems into digital products that work.',
+    heroEyebrow: 'Product strategy, design and build · English & Spanish',
+    heroHeadline: 'Better digital experiences, built around how your business actually works.',
     heroBody:
-      'I help owner-led businesses figure out what their website or workflow needs to accomplish — then take it from strategy through design, build and launch, in English or Spanish.',
+      'I help owner-led businesses clarify what they need, then take it from strategy through design, build and launch—from websites and booking experiences to focused digital tools.',
     heroPrimaryCta: 'See the work',
     heroSecondaryCta: 'Tell me about your business',
 
@@ -73,7 +73,7 @@ export const en: SiteCopy = {
     workEyebrow: 'Selected work',
     workTitle: 'What I have been building',
     workBody:
-      'Active client work, a venture I own and operate, and a product collaboration. Every project says plainly what state it is in and how it came about.',
+      'A product collaboration, a venture I own and operate, active client work and one strategic concept. Every project says plainly what state it is in and how it came about.',
     workCta: 'See all work',
 
     processEyebrow: 'How I work',
@@ -108,7 +108,7 @@ export const en: SiteCopy = {
     conceptsEyebrow: 'Selected concepts',
     conceptsTitle: 'Work I started myself.',
     conceptsBody:
-      'Nobody commissioned these. I build them to think a problem through properly and to show a business what it could have. They are labelled as concepts everywhere they appear.',
+      'Nobody commissioned this. I build concepts to think a problem through properly and to show a business what it could have, and they are labelled as concepts everywhere they appear.',
 
     pricingEyebrow: 'Engagements',
     pricingTitle: 'What this costs',

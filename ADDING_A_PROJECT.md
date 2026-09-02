@@ -37,6 +37,26 @@ Rules that are not negotiable:
   the box so nothing shifts as the image loads, and the schema requires them.
 - Do not crop away the interface context that makes the screenshot worth showing.
 
+### Capturing them from a project you can build
+
+When the project has a repository you can run, take the screenshots from a **production
+build** rather than a dev server — a dev server shows overlays and unoptimised assets
+that are not what visitors see.
+
+```bash
+# in the project's own repository — read only, never commit from here
+npm ci && npm run build
+npx serve dist -l 4400          # or out/, or whatever the build produces
+```
+
+Then drive a real browser at it: scroll the whole page so lazy images load, force the
+scroll back to the top with `behavior: 'instant'` (a smooth-scrolling page will still be
+mid-flight otherwise), and screenshot the viewport. Capture phone views at
+`deviceScaleFactor: 2` so the result is not soft. Convert to WebP before committing.
+
+Record where the screenshots came from — repository and commit — in the README's asset
+notes, so the next person knows when they have gone stale.
+
 ## 2. The record
 
 Copy the closest existing project and edit it. Every field below is required unless

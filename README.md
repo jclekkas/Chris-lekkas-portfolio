@@ -3,8 +3,13 @@
 The public portfolio and proof layer for Chris Lekkas: product strategist and digital
 builder for owner-led businesses. English and Spanish, first-class in both.
 
+Canonical repository: **`jclekkas/chris-lekkas-portfolio`** (lowercase).
 Live domain: `chrislekkas.com` (not yet deployed from this repository — see
 **Deploying** below).
+
+```bash
+git clone https://github.com/jclekkas/chris-lekkas-portfolio.git
+```
 
 ---
 
@@ -127,26 +132,33 @@ visitor stays on the page — including the case study — they were reading.
 
 ## Before this goes to production
 
-### Claims that need Chris's approval
+### Resolved — do not reopen these
 
-These are implemented and correct as written, but each states something about a real
-person or business that only Chris can confirm.
+Chris has approved all of the following. They are settled and are not open questions.
 
-- [ ] **Permission to show BWE Construction & Engineering** by name, and that the
-      capabilities described are the ones the firm wants stated.
-      (`publicPermission: 'pending'`)
-- [ ] **Permission to identify Ginny's Cleaning Services** by name.
-      (`publicPermission: 'pending'`)
-- [ ] **Ginny's current engagement status** — the site says the concept converted into a
-      client engagement now being prepared for launch. Confirm that is still true.
-- [ ] **The Enlace Mental public description**, approved by Rolando López.
-- [ ] **The Enlace Mental relationship label.** It is published as *product
-      collaboration*. Governance and compensation are not settled, so nothing stronger
-      is claimed — no cofounder, partner, investor or contractor.
-- [ ] **Public display of the $5,000 starting price** on the home page.
-- [ ] **Any outcome claim or testimonial.** There are none in the repository today. Every
-      project either states measured evidence or says plainly that nothing has been
-      measured.
+- Ginny's Cleaning Services may be named publicly.
+- Ginny's is an in-progress client engagement, not a concept.
+- Enlace Mental may be named and featured prominently.
+- Enlace Mental's relationship label is **product collaboration** — not cofounder, not
+  partner, not investor, not contractor.
+- The typical **$5,000** starting investment may be shown publicly.
+- There are no testimonials on the site, and none are to be added without written
+  permission from the person quoted.
+- There are no unverified outcome claims. Every project either states measured
+  evidence or says plainly that nothing has been measured.
+
+### Still open
+
+- [ ] **Permission to name BWE Construction & Engineering.** No document in this
+      repository records the firm agreeing to be named publicly, so it stays
+      `publicPermission: 'pending'`. Everything else about the project is settled: the
+      working website is complete and launch is waiting on the firm regaining control of
+      its domain. The case study links only to the working prototype, never to the
+      domain it does not currently control.
+- [ ] **Whether an Enlace Mental preview link may be shown.** The platform has not
+      launched and the host name in its repository is a fallback default rather than a
+      confirmed address, so the case study currently links to nothing. Say the word and
+      a labelled preview link can be added.
 
 ### Missing assets
 
@@ -154,24 +166,23 @@ person or business that only Chris can confirm.
       (`public/chris/portrait.webp`). It is displayed at a size it can carry, but a
       1200px original is needed before it can be used larger.
 - [ ] **Genuine mobile screenshots** for Heart of Luray, BWE Construction & Engineering,
-      Ginny's Cleaning Services, Enlace Mental and Handy Danny. Only Hotel Rancho Estero
-      y Mar has real phone captures, and only its own are used. Nothing is faked: no
-      desktop screenshot is placed inside a phone frame and no empty device is drawn to
-      fill a gap.
-- [ ] **Current Enlace Mental platform visuals.** There are none, so the project is
-      deliberately unfeatured and its card shows a typographic panel. The older
-      clinical-practice prototype is a different product and is not used as a stand-in.
-      Feature it once real visuals and approved copy exist.
+      Ginny's Cleaning Services and Handy Danny. Enlace Mental and Hotel Rancho Estero y
+      Mar have real phone captures and use them. Nothing is faked: no desktop screenshot
+      is placed inside a phone frame and no empty device is drawn to fill a gap.
+
+Enlace Mental's screenshots — desktop, phone and four gallery frames — were captured on
+2026-09-02 from a local production build of `jclekkas/enlace-mental` at commit
+`3ae674f`. Recapture them when the platform changes materially; see
+[`ADDING_A_PROJECT.md`](./ADDING_A_PROJECT.md).
 
 ### Verification that could not be done here
 
-- **The four external URLs were never loaded.** Outbound HTTPS to `heartofluray.com` and
-  the three `*.netlify.app` prototypes is blocked by this build environment's egress
-  policy. The links are present and correctly labelled — a clean label, never a raw
-  generated hostname — but somebody needs to open each one before launch.
-- **Lighthouse was not run against a production deployment.** See below.
-
----
+- **The three external prototype URLs were never opened.** Outbound HTTPS to
+  `heartofluray.com` and the `*.netlify.app` prototypes is blocked by this build
+  environment's egress policy. The links are present and correctly labelled — a clean
+  label, never a raw generated hostname — but somebody needs to open each one before
+  launch.
+- **Lighthouse ran against a local static server**, not a production deployment.
 
 ## Deploying
 

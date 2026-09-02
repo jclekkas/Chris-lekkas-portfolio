@@ -110,8 +110,6 @@ export const ginnysCleaning: Project = {
     gallery: [],
   },
 
-  publicPermission: 'pending',
-  permissionNote:
-    'Confirm Ginny is happy to be identified by name publicly, and confirm the current engagement status, before this goes to production.',
+  publicPermission: 'approved',
   lastVerified: '2026-09-02',
 }

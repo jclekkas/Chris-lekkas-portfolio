@@ -6,8 +6,9 @@ export const bweMaryland: Project = {
 
   status: 'in-progress',
   relationship: 'client',
-  featured: true,
-  order: 2,
+  // Not featured on the homepage until the domain is restored and it can launch.
+  featured: false,
+  order: 5,
 
   year: 2026,
   industry: { en: 'Civil construction', es: 'Construcción civil' },
@@ -78,10 +79,13 @@ export const bweMaryland: Project = {
     ],
   },
 
-  evidence: null,
+  evidence: {
+    en: 'The working website is complete and can be reviewed as a prototype. It has not launched, so there is no traffic, bid-invitation or enquiry figure to report.',
+    es: 'El sitio web funcional está terminado y se puede revisar como prototipo. No se ha lanzado, así que no hay cifras de tráfico, de invitaciones a licitar ni de consultas que reportar.',
+  },
   currentState: {
-    en: 'In progress. Being built with the firm now; the revamp has not launched, so there is nothing measured to report yet.',
-    es: 'En proceso. Se está construyendo junto con la empresa; la renovación aún no se ha lanzado, así que todavía no hay nada medido que reportar.',
+    en: 'The working website is complete. Launch is temporarily blocked while the business restores control of its domain.',
+    es: 'El sitio web funcional está terminado. El lanzamiento está detenido temporalmente mientras la empresa recupera el control de su dominio.',
   },
 
   prototypeUrl: {

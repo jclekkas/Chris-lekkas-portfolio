@@ -176,30 +176,52 @@ just does not go live.
 
 As of 2026-09-02. Six projects, no others.
 
-| Project | Status | Relationship | Featured | Permission | Outstanding |
+| # | Project | Status | Relationship | Homepage | Permission |
 | --- | --- | --- | --- | --- | --- |
-| Heart of Luray | Live | Owned venture | Yes | Approved | Mobile screenshot |
-| BWE Construction & Engineering | In progress | Client project | Yes | **Pending** | Permission to name; mobile screenshot |
-| Ginny's Cleaning Services | In progress | Client project | Yes | **Pending** | Permission to name; confirm engagement status; mobile screenshot |
-| Enlace Mental | In progress | Product collaboration | No | **Pending** | Approved description; relationship label; current platform visuals |
-| Hotel Rancho Estero y Mar | Concept | Self-initiated | No | Approved | — |
-| Handy Danny | Concept | Self-initiated | No | Approved | Mobile screenshot |
+| 1 | Enlace Mental | In progress | Product collaboration | Featured | Approved |
+| 2 | Heart of Luray | Live | Owned venture | Featured | Approved |
+| 3 | Ginny's Cleaning Services | In progress | Client project | Featured | Approved |
+| 4 | Hotel Rancho Estero y Mar | Concept | Self-initiated | Featured | Approved |
+| 5 | BWE Construction & Engineering | In progress | Client project | Work page only | **Pending** |
+| 6 | Handy Danny | Concept | Self-initiated | Selected concepts | Approved |
 
 Notes that matter for accuracy:
 
+- **Enlace Mental is the flagship.** It is a Spanish-first media, knowledge, education
+  and personal-development platform built with Rolando López — not a therapy-practice
+  website and not a podcast with a site attached. The platform is built and bilingual
+  but has **not launched**, and Season 1 has not been published, so there are no
+  audience, subscriber, engagement or revenue figures. The relationship is a *product
+  collaboration*: governance and compensation are unsettled, so no stronger word is
+  used, and Chris is never described as a cofounder, partner, investor or contractor.
+  Screenshots were captured 2026-09-02 from a local production build of
+  `jclekkas/enlace-mental` at commit `3ae674f`.
 - **Heart of Luray is Chris's own business**, not a client project. It is live with
   direct-booking capability and has **not recorded a direct booking**. The site must not
   say it is taking direct bookings, that bookings increased, or that platform commissions
   were reduced.
-- **Enlace Mental is deliberately unfeatured.** There are no current visuals of the
-  platform, and the older clinical-practice prototype is a different product. It gets
-  featured when real visuals and approved copy exist, not before. The relationship is a
-  *product collaboration* — governance and compensation are unsettled, so no stronger word
-  is used.
+- **BWE is not abandoned.** The working website is complete; launch is temporarily
+  blocked while the business restores control of its domain. It stays on the Work page
+  and off the homepage until the domain is back. The case study links **only** to the
+  working prototype — never to the domain the firm does not currently control — and an
+  automated check in `scripts/audit-content.mjs` fails the build if a `liveUrl` is ever
+  added to that record. Naming permission is the one outstanding approval in the lineup.
 - **Estero y Mar was presented and declined.** The hotel replied that it was already
-  redesigning. There are no discussions under way and no adoption is expected.
+  redesigning. There are no discussions under way and no adoption is expected. It is
+  featured on the homepage as the one selected strategic concept, carrying its concept
+  and self-initiated labels wherever it appears.
 - **Handy Danny is uncommissioned.** There are no discussions under way.
 - **"BWE Construyo" / "BWE Construye" has been removed entirely** — from content, images,
   routes, sitemap, structured data and documentation — because it is not in production.
   Nothing was invented to replace it. `npm run audit:content` fails the build if any
   variant reappears.
+
+### Approvals on record
+
+Settled by Chris on 2026-09-02 and not to be reopened: Ginny's may be named publicly;
+Ginny's is an in-progress client engagement; Enlace Mental may be named and featured;
+Enlace Mental's label is *product collaboration*; the typical $5,000 starting investment
+may be shown; there are no testimonials; there are no unverified outcome claims.
+
+Outstanding: permission to name BWE Construction & Engineering, and whether an Enlace
+Mental preview link may be shown before launch.

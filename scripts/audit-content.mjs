@@ -102,9 +102,14 @@ const STRUCTURAL_CHECKS = [
     require: [/relationship:\s*'client'/, /status:\s*'in-progress'/],
   },
   {
-    label: 'Enlace Mental must be a product collaboration',
+    label: 'Enlace Mental must be a featured product collaboration',
     file: 'src/content/projects/enlace-mental.ts',
-    require: [/relationship:\s*'collaboration'/],
+    require: [/relationship:\s*'collaboration'/, /featured:\s*true/, /order:\s*1\b/],
+  },
+  {
+    label: 'BWE must not link to the business domain while it is out of the firm’s control',
+    file: 'src/content/projects/bwe-maryland.ts',
+    forbid: [/liveUrl:/],
   },
   {
     label: 'Estero y Mar must remain a self-initiated concept',
@@ -176,7 +181,17 @@ for (const check of STRUCTURAL_CHECKS) {
     continue
   }
   const text = readFileSync(full, 'utf8')
-  for (const required of check.require) {
+  for (const forbidden of check.forbid ?? []) {
+    if (forbidden.test(text)) {
+      findings.push({
+        label: check.label,
+        file: check.file,
+        line: 0,
+        excerpt: `found ${forbidden}`,
+      })
+    }
+  }
+  for (const required of check.require ?? []) {
     if (!required.test(text)) {
       findings.push({
         label: check.label,

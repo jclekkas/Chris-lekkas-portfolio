@@ -7,7 +7,7 @@ export const heartOfLuray: Project = {
   status: 'live',
   relationship: 'owned',
   featured: true,
-  order: 1,
+  order: 2,
 
   year: 2026,
   industry: { en: 'Short-term rental', es: 'Alquiler vacacional' },

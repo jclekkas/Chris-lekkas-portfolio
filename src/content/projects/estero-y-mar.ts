@@ -6,8 +6,10 @@ export const esteroYMar: Project = {
 
   status: 'concept',
   relationship: 'self-initiated',
-  featured: false,
-  order: 5,
+  // Featured as the one strategic concept on the homepage. It carries its
+  // concept and self-initiated labels everywhere it appears.
+  featured: true,
+  order: 4,
 
   year: 2026,
   industry: { en: 'Hotel and resort', es: 'Hotel y resort' },

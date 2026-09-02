@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "description": "Portfolio of Chris Lekkas — product strategist and digital builder.",
+  "license": "UNLICENSED",
+  "author": "Chris Lekkas",
+  "homepage": "https://chrislekkas.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jclekkas/chris-lekkas-portfolio.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

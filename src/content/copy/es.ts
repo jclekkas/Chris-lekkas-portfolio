@@ -5,7 +5,7 @@ export const es: SiteCopy = {
     title: 'Chris Lekkas — Estrategia de producto y construcción digital',
     titleTemplate: '%s — Chris Lekkas',
     description:
-      'Chris Lekkas ayuda a negocios liderados por sus dueños a definir qué tiene que lograr su sitio web o su operación, y lo lleva de la estrategia al diseño, la construcción y el lanzamiento, en español o en inglés.',
+      'Chris Lekkas ayuda a negocios liderados por sus dueños a definir con claridad lo que necesitan, y lo lleva de la estrategia al diseño, la construcción y el lanzamiento: desde sitios web y experiencias de reservación hasta herramientas digitales enfocadas. En español y en inglés.',
     jobTitle: 'Estratega de producto y constructor digital',
     serviceName:
       'Chris Lekkas — estrategia, diseño y construcción para negocios liderados por sus dueños',
@@ -58,10 +58,11 @@ export const es: SiteCopy = {
   },
 
   home: {
-    heroEyebrow: 'Estrategia de producto · Diseño · Construcción',
-    heroHeadline: 'Convierto problemas de negocio en productos digitales que funcionan.',
+    heroEyebrow: 'Estrategia de producto, diseño y construcción · Español e inglés',
+    heroHeadline:
+      'Mejores experiencias digitales, diseñadas a partir de cómo funciona de verdad su negocio.',
     heroBody:
-      'Ayudo a negocios liderados por sus dueños a definir qué tiene que lograr su sitio web o su operación, y lo llevo de la estrategia al diseño, la construcción y el lanzamiento, en español o en inglés.',
+      'Ayudo a negocios liderados por sus dueños a definir con claridad lo que necesitan, y lo llevo de la estrategia al diseño, la construcción y el lanzamiento: desde sitios web y experiencias de reservación hasta herramientas digitales enfocadas.',
     heroPrimaryCta: 'Ver el trabajo',
     heroSecondaryCta: 'Cuénteme de su negocio',
 
@@ -76,7 +77,7 @@ export const es: SiteCopy = {
     workEyebrow: 'Trabajo seleccionado',
     workTitle: 'Lo que he estado construyendo',
     workBody:
-      'Trabajo activo con clientes, un negocio que yo mismo opero y una colaboración de producto. Cada proyecto dice con claridad en qué estado está y cómo surgió.',
+      'Una colaboración de producto, un negocio que yo mismo opero, trabajo activo con clientes y un concepto estratégico. Cada proyecto dice con claridad en qué estado está y cómo surgió.',
     workCta: 'Ver todo el trabajo',
 
     processEyebrow: 'Cómo trabajo',
@@ -111,7 +112,7 @@ export const es: SiteCopy = {
     conceptsEyebrow: 'Conceptos seleccionados',
     conceptsTitle: 'Trabajo que empecé por mi cuenta.',
     conceptsBody:
-      'Nadie encargó estos proyectos. Los construyo para pensar bien un problema y para mostrarle a un negocio lo que podría tener. Están marcados como conceptos en todos lados donde aparecen.',
+      'Nadie lo encargó. Construyo conceptos para pensar bien un problema y para mostrarle a un negocio lo que podría tener, y están marcados como conceptos en todos lados donde aparecen.',
 
     pricingEyebrow: 'Proyectos',
     pricingTitle: 'Cuánto cuesta',

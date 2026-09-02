@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { LANGUAGES, type Language } from '@/content/schema'
 import { getCopy } from '@/content/copy'
-import { CONCEPT_PROJECTS, FEATURED_PROJECTS } from '@/content/projects'
+import { FEATURED_PROJECTS, UNFEATURED_CONCEPT_PROJECTS } from '@/content/projects'
 import { isLanguage } from '@/lib/routing'
 import { pageMetadata } from '@/lib/metadata'
 import { Container } from '@/components/Container'
@@ -207,8 +207,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         className="bg-surface/50"
       >
         <div className="flex flex-col">
-          {CONCEPT_PROJECTS.map((project, index) => (
-            <ProjectCard key={project.slug} project={project} lang={lang} index={index + 1} />
+          {UNFEATURED_CONCEPT_PROJECTS.map((project, index) => (
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              lang={lang}
+              index={FEATURED_PROJECTS.length + index + 1}
+            />
           ))}
         </div>
       </Section>
