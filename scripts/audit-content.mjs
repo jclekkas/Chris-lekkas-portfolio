@@ -47,23 +47,45 @@ const TEXT_EXTENSIONS = new Set([
  */
 const RENDERED_EXTENSIONS = new Set(['.html', '.txt', '.xml'])
 
+/**
+ * The documents whose job is to name the forbidden phrases in order to forbid
+ * them. Rules marked `phrase` skip these files; rules that guard a private
+ * VALUE — a rate, a client's price — do not, because a private number is just
+ * as leaked in a README as on a page.
+ */
+const GUIDANCE_FILES = new Set([
+  'README.md',
+  'SITE_CONTENT.md',
+  'ADDING_A_PROJECT.md',
+  'docs/PORTFOLIO_AND_PROOF_SYSTEM.md',
+])
+
 const RULES = [
   ['Object rendered into markup', /\[object Object\]/g, { renderedOnly: true }],
-  ['Removed project: BWE Construyo', /BWE\s+Construyo/gi],
-  ['Removed project: BWE Construye', /BWE\s+Construye\b/gi],
-  ['Removed concept: Dr. Rolando Lopez', /Dr\.?\s*Rolando\s+L[o\u00f3]pez/gi],
-  ['Bargain pricing: "starts in the hundreds"', /starts?\s+in\s+the\s+hundreds/gi],
-  ['Bargain pricing: "low thousands"', /low\s+thousands/gi],
-  ['Bargain pricing: "far below agency"', /far\s+below\s+(what\s+an\s+)?agenc/gi],
+  ['Removed project: BWE Construyo', /BWE\s+Construyo/gi, { phrase: true }],
+  ['Removed project: BWE Construye', /BWE\s+Construye\b/gi, { phrase: true }],
+  ['Removed concept: Dr. Rolando Lopez', /Dr\.?\s*Rolando\s+L[o\u00f3]pez/gi, { phrase: true }],
+  [
+    'Bargain pricing: "starts in the hundreds"',
+    /starts?\s+in\s+the\s+hundreds/gi,
+    { phrase: true },
+  ],
+  ['Bargain pricing: "low thousands"', /low\s+thousands/gi, { phrase: true }],
+  ['Bargain pricing: "far below agency"', /far\s+below\s+(what\s+an\s+)?agenc/gi, { phrase: true }],
   [
     'Unverified claim: discussions under way (affirmative)',
     /(?<!\bno\s)(?<!\bnot\s)discussions?\s+(?:are|is)\s+under\s*way/gi,
+    { phrase: true },
   ],
-  ['Unverified claim: Heart of Luray taking direct bookings', /taking\s+direct\s+bookings/gi],
+  [
+    'Unverified claim: Heart of Luray taking direct bookings',
+    /taking\s+direct\s+bookings/gi,
+    { phrase: true },
+  ],
   ['Private maintenance price', /\$(?:49|79|149|199)\b/g],
   ["Private price: Ginny's engagement", /\$1[,.]?500\b/g],
-  ['Employer that must not appear', /Rocket\s+Mortgage/gi],
-  ['Employer that must not appear', /\bFICO\b/g],
+  ['Employer that must not appear', /Rocket\s+Mortgage/gi, { phrase: true }],
+  ['Employer that must not appear', /\bFICO\b/g, { phrase: true }],
   ['Raw hosting hostname used as a visible label', />\s*[a-z0-9-]+\.netlify\.app\s*</gi],
 ]
 
@@ -127,16 +149,19 @@ for (const file of targets) {
   } catch {
     continue
   }
+  const relative = file.replace(`${ROOT}/`, '')
   const rendered = RENDERED_EXTENSIONS.has(extname(file))
+  const isGuidance = GUIDANCE_FILES.has(relative)
   for (const [label, pattern, options] of RULES) {
     if (options?.renderedOnly && !rendered) continue
+    if (options?.phrase && isGuidance) continue
     pattern.lastIndex = 0
     const match = pattern.exec(text)
     if (match) {
       const line = text.slice(0, match.index).split('\n').length
       findings.push({
         label,
-        file: file.replace(`${ROOT}/`, ''),
+        file: relative,
         line,
         excerpt: match[0].slice(0, 80),
       })

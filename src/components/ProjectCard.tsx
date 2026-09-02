@@ -35,9 +35,7 @@ export function ProjectCard({
       <div className="grid gap-6 lg:grid-cols-[5fr_7fr] lg:gap-10">
         <div className="lg:pt-1">
           <div className="flex items-baseline gap-4">
-            <span className="u-meta tabular-nums text-rule-strong">
-              {String(index).padStart(2, '0')}
-            </span>
+            <span className="u-meta tabular-nums text-index">{String(index).padStart(2, '0')}</span>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
               <StatusTag status={project.status} label={copy.status[project.status].label} />
               <RelationshipTag

@@ -35,7 +35,8 @@ export async function POST(request: Request) {
   const data = parsed.data
 
   // Spam checks that cost a real visitor nothing: a hidden field a person never
-  // sees, and a form that was filled faster than a person can type.
+  // sees, and a form that was filled faster than a person can type. Both answer
+  // 202 rather than an error, so a bot learns nothing about why it failed.
   if (data.company && data.company.length > 0) {
     return NextResponse.json({ ok: true }, { status: 202 })
   }

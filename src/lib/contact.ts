@@ -15,7 +15,7 @@ export const contactSchema = z.object({
    * everything. It costs the visitor nothing — no puzzle, no third-party
    * script, no tracking.
    */
-  company: z.string().max(0).optional().or(z.literal('')),
+  company: z.string().max(200).optional(),
   /** Milliseconds between the form rendering and being submitted. */
   elapsedMs: z.number().int().nonnegative().optional(),
   lang: z.enum(['en', 'es']),

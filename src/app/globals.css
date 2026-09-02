@@ -18,6 +18,11 @@
   --color-rule: #e9e1d5;
   --color-rule-strong: #d6cbba;
 
+  /* The editorial index numbers. Quieter than body text, but still text: this
+     clears 4.5:1 on paper, on the tinted section background, and on surface.
+     `rule-strong` is a border colour and must never be used for type. */
+  --color-index: #746a57;
+
   --color-accent: #b0522c;
   --color-accent-deep: #8f3f20;
   --color-accent-soft: #f4ded1;

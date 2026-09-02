@@ -87,7 +87,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 </div>
                 <div className="mt-4 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
                   <p className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                    <span className="u-meta tabular-nums text-rule-strong">01</span>
+                    <span className="u-meta tabular-nums text-index">01</span>
                     <span className="font-display text-lg text-ink">{lead.name}</span>
                     <StatusTag status={lead.status} label={copy.status[lead.status].label} />
                     <RelationshipTag

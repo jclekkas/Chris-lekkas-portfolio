@@ -86,7 +86,9 @@ export function ContactForm({ lang }: { lang: Language }) {
 
     setStatus('submitting')
     try {
-      const response = await fetch('/api/contact', {
+      // Trailing slash matches `trailingSlash: true`, so the POST is not answered
+      // with a 308 that costs an extra round trip.
+      const response = await fetch('/api/contact/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
