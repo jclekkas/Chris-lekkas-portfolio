@@ -4,11 +4,12 @@ export const bweMaryland: Project = {
   slug: 'bwe-maryland',
   name: 'BWE Construction & Engineering',
 
-  status: 'in-progress',
+  status: 'live',
   relationship: 'client',
-  // Not featured on the homepage until the domain is restored and it can launch.
-  featured: false,
-  order: 5,
+  // The domain was restored and the site launched, which is what had been
+  // holding this off the homepage.
+  featured: true,
+  order: 3,
 
   year: 2026,
   industry: { en: 'Civil construction', es: 'Construcción civil' },
@@ -80,20 +81,25 @@ export const bweMaryland: Project = {
   },
 
   evidence: {
-    en: 'The working website is complete and can be reviewed as a prototype. It has not launched, so there is no traffic, bid-invitation or enquiry figure to report.',
-    es: 'El sitio web funcional está terminado y se puede revisar como prototipo. No se ha lanzado, así que no hay cifras de tráfico, de invitaciones a licitar ni de consultas que reportar.',
+    en: 'The site is live at the firm’s own domain. It launched recently and nothing has been measured yet, so there is no traffic, bid-invitation or enquiry figure to report.',
+    es: 'El sitio está en línea en el dominio de la propia empresa. Se lanzó hace poco y todavía no se ha medido nada, así que no hay cifras de tráfico, de invitaciones a licitar ni de consultas que reportar.',
   },
   currentState: {
-    en: 'The working website is complete. Launch is temporarily blocked while the business restores control of its domain.',
-    es: 'El sitio web funcional está terminado. El lanzamiento está detenido temporalmente mientras la empresa recupera el control de su dominio.',
+    en: 'Live at bwe-maryland.com. The domain is back under the firm’s control and the revamped site is the one serving there.',
+    es: 'En línea en bwe-maryland.com. El dominio volvió al control de la empresa y el sitio renovado es el que está publicado ahí.',
   },
 
-  prototypeUrl: {
-    url: 'https://cozy-haupia-4a46c4.netlify.app',
-    label: { en: 'View working prototype', es: 'Ver el prototipo funcional' },
+  // The Netlify prototype is now a stale duplicate of a site that has a real
+  // address, so it is gone rather than sitting alongside it.
+  liveUrl: {
+    url: 'https://bwe-maryland.com',
+    label: { en: 'Visit bwe-maryland.com', es: 'Visitar bwe-maryland.com' },
   },
 
   images: {
+    // This capture predates launch. The design is the one that shipped, but it
+    // should be recaptured from the live domain — see the asset notes in
+    // README.md.
     desktop: {
       src: '/projects/bwe-maryland/homepage-desktop.webp',
       width: 1389,
@@ -106,8 +112,10 @@ export const bweMaryland: Project = {
     gallery: [],
   },
 
+  // The site being live at the firm's own domain is not the firm agreeing to
+  // appear in someone else's portfolio. Those are separate permissions.
   publicPermission: 'pending',
   permissionNote:
     'Confirm with the firm that it is happy to be named publicly, and that the capabilities described here are the ones it wants stated, before this goes to production.',
-  lastVerified: '2026-09-02',
+  lastVerified: '2026-09-05',
 }

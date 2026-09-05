@@ -151,10 +151,10 @@ Chris has approved all of the following. They are settled and are not open quest
 
 - [ ] **Permission to name BWE Construction & Engineering.** No document in this
       repository records the firm agreeing to be named publicly, so it stays
-      `publicPermission: 'pending'`. Everything else about the project is settled: the
-      working website is complete and launch is waiting on the firm regaining control of
-      its domain. The case study links only to the working prototype, never to the
-      domain it does not currently control.
+      `publicPermission: 'pending'`. The domain question is resolved — the site is live
+      at `bwe-maryland.com` and the case study links there — but a firm publishing its
+      own website is not the same as that firm agreeing to appear in someone else's
+      portfolio. This is the last approval outstanding.
 - [ ] **Whether an Enlace Mental preview link may be shown.** The platform has not
       launched and the host name in its repository is a fallback default rather than a
       confirmed address, so the case study currently links to nothing. Say the word and
@@ -165,6 +165,9 @@ Chris has approved all of the following. They are settled and are not open quest
 - [ ] **A higher-resolution portrait.** The only file available is 400×400
       (`public/chris/portrait.webp`). It is displayed at a size it can carry, but a
       1200px original is needed before it can be used larger.
+- [ ] **A recapture of BWE Construction & Engineering from the live domain.** The
+      committed screenshot is of the pre-launch build. The design is the one that
+      shipped, but a live site should be shown as it actually serves.
 - [ ] **Genuine mobile screenshots** for Heart of Luray, BWE Construction & Engineering,
       Ginny's Cleaning Services and Handy Danny. Enlace Mental and Hotel Rancho Estero y
       Mar have real phone captures and use them. Nothing is faked: no desktop screenshot

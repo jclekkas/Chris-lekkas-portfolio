@@ -174,15 +174,15 @@ just does not go live.
 
 ## Current state of the lineup
 
-As of 2026-09-02. Six projects, no others.
+As of 2026-09-05. Six projects, no others.
 
 | # | Project | Status | Relationship | Homepage | Permission |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Enlace Mental | In progress | Product collaboration | Featured | Approved |
 | 2 | Heart of Luray | Live | Owned venture | Featured | Approved |
-| 3 | Ginny's Cleaning Services | In progress | Client project | Featured | Approved |
-| 4 | Hotel Rancho Estero y Mar | Concept | Self-initiated | Featured | Approved |
-| 5 | BWE Construction & Engineering | In progress | Client project | Work page only | **Pending** |
+| 3 | BWE Construction & Engineering | Live | Client project | Featured | **Pending** |
+| 4 | Ginny's Cleaning Services | In progress | Client project | Featured | Approved |
+| 5 | Hotel Rancho Estero y Mar | Concept | Self-initiated | Featured | Approved |
 | 6 | Handy Danny | Concept | Self-initiated | Selected concepts | Approved |
 
 Notes that matter for accuracy:
@@ -200,12 +200,18 @@ Notes that matter for accuracy:
   direct-booking capability and has **not recorded a direct booking**. The site must not
   say it is taking direct bookings, that bookings increased, or that platform commissions
   were reduced.
-- **BWE is not abandoned.** The working website is complete; launch is temporarily
-  blocked while the business restores control of its domain. It stays on the Work page
-  and off the homepage until the domain is back. The case study links **only** to the
-  working prototype — never to the domain the firm does not currently control — and an
-  automated check in `scripts/audit-content.mjs` fails the build if a `liveUrl` is ever
-  added to that record. Naming permission is the one outstanding approval in the lineup.
+- **BWE launched on 2026-09-05.** The domain came back under the firm's control and the
+  revamped site is what serves at `bwe-maryland.com`. Status moved to `live`, the live
+  URL replaced the Netlify prototype rather than sitting beside it, and the project moved
+  onto the homepage — Chris's earlier hold was explicitly conditional on the domain being
+  restored. The automated check in `scripts/audit-content.mjs` inverted with it: it used
+  to fail the build if a `liveUrl` appeared, and now fails if the live URL is missing or
+  the superseded prototype link comes back.
+  Two things did **not** change. Naming permission is still pending — a firm publishing
+  its own website is not that firm agreeing to appear in someone else's portfolio — and
+  the committed screenshot is still the pre-launch capture, so it is on the recapture
+  list. Nothing about traffic, bid invitations or enquiries is claimed, because nothing
+  has been measured.
 - **Estero y Mar was presented and declined.** The hotel replied that it was already
   redesigning. There are no discussions under way and no adoption is expected. It is
   featured on the homepage as the one selected strategic concept, carrying its concept

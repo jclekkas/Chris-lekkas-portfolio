@@ -7,7 +7,7 @@ export const ginnysCleaning: Project = {
   status: 'in-progress',
   relationship: 'client',
   featured: true,
-  order: 3,
+  order: 4,
 
   year: 2026,
   industry: {

@@ -107,9 +107,10 @@ const STRUCTURAL_CHECKS = [
     require: [/relationship:\s*'collaboration'/, /featured:\s*true/, /order:\s*1\b/],
   },
   {
-    label: 'BWE must not link to the business domain while it is out of the firm’s control',
+    label: 'BWE is live: it must link its own domain and not the superseded prototype',
     file: 'src/content/projects/bwe-maryland.ts',
-    forbid: [/liveUrl:/],
+    require: [/status:\s*'live'/, /liveUrl:/, /bwe-maryland\.com/],
+    forbid: [/prototypeUrl:/, /netlify\.app/],
   },
   {
     label: 'Estero y Mar must remain a self-initiated concept',

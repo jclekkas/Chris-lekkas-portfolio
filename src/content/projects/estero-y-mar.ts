@@ -9,7 +9,7 @@ export const esteroYMar: Project = {
   // Featured as the one strategic concept on the homepage. It carries its
   // concept and self-initiated labels everywhere it appears.
   featured: true,
-  order: 4,
+  order: 5,
 
   year: 2026,
   industry: { en: 'Hotel and resort', es: 'Hotel y resort' },
