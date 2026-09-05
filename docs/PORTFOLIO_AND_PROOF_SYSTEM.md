@@ -207,11 +207,20 @@ Notes that matter for accuracy:
   restored. The automated check in `scripts/audit-content.mjs` inverted with it: it used
   to fail the build if a `liveUrl` appeared, and now fails if the live URL is missing or
   the superseded prototype link comes back.
-  Two things did **not** change. Naming permission is still pending — a firm publishing
-  its own website is not that firm agreeing to appear in someone else's portfolio — and
-  the committed screenshot is still the pre-launch capture, so it is on the recapture
-  list. Nothing about traffic, bid invitations or enquiries is claimed, because nothing
-  has been measured.
+  Screenshots were recaptured from a production build of the site's own repository at
+  package version 0.2.1 — the version the deployment record says is serving — because the
+  live domain is unreachable from a Claude Code session under the organisation's egress
+  policy.
+  The case study was also rewritten against the project's own claim register. An earlier
+  draft described a services list, certifications surfaced in the header and a capability
+  statement as a call to action. None of those survived the client's own verification:
+  thirteen service claims were removed to a backlog as unconfirmed, formal certification
+  is recorded as unsupported and deliberately absent, and there is no capability
+  statement. The case study now describes what the register actually shows, which is a
+  better story than the one it replaced.
+  Naming permission is still pending — a firm publishing its own website is not that firm
+  agreeing to appear in someone else's portfolio. Nothing about traffic, bid invitations
+  or enquiries is claimed, because nothing has been measured.
 - **Estero y Mar was presented and declined.** The hotel replied that it was already
   redesigning. There are no discussions under way and no adoption is expected. It is
   featured on the homepage as the one selected strategic concept, carrying its concept

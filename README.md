@@ -165,13 +165,17 @@ Chris has approved all of the following. They are settled and are not open quest
 - [ ] **A higher-resolution portrait.** The only file available is 400×400
       (`public/chris/portrait.webp`). It is displayed at a size it can carry, but a
       1200px original is needed before it can be used larger.
-- [ ] **A recapture of BWE Construction & Engineering from the live domain.** The
-      committed screenshot is of the pre-launch build. The design is the one that
-      shipped, but a live site should be shown as it actually serves.
-- [ ] **Genuine mobile screenshots** for Heart of Luray, BWE Construction & Engineering,
-      Ginny's Cleaning Services and Handy Danny. Enlace Mental and Hotel Rancho Estero y
+- [ ] **Genuine mobile screenshots** for Heart of Luray, Ginny's Cleaning Services and
+      Handy Danny. Enlace Mental and Hotel Rancho Estero y
       Mar have real phone captures and use them. Nothing is faked: no desktop screenshot
       is placed inside a phone frame and no empty device is drawn to fill a gap.
+
+BWE Maryland's screenshots — desktop, phone and two gallery frames — were captured on
+2026-09-05 from a local production build of `jclekkas/bwe-maryland` at commit `950afc9`,
+package version 0.2.1, which is the version the deployment record says is live at
+`bwe-maryland.com`. The live domain itself is unreachable from a Claude Code session
+(organisation egress policy), so the screenshots come from the source that ships there
+rather than from the running site.
 
 Enlace Mental's screenshots — desktop, phone and four gallery frames — were captured on
 2026-09-02 from a local production build of `jclekkas/enlace-mental` at commit
